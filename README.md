@@ -6,8 +6,8 @@
 
 ## Функциональность 
 
-Высвечивается надпись Happy Birthday Sam! From Emma
+Высвечивается надпись Happy Birthday (Имя)! From (От кого)
 
 ## Макет
 
-![Скрин макета](scheme.png)
+![Скрин макета](screen.png)
