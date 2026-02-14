@@ -5,17 +5,21 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
@@ -48,7 +52,9 @@ class MainActivity : ComponentActivity() {
 fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
     Column(
         verticalArrangement = Arrangement.Center,
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
+
     ) {
         Text(
             text = message,
@@ -56,12 +62,18 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
             lineHeight = 116.sp,
             textAlign = TextAlign.Center,
             modifier = modifier
+                .border(2.dp, Color.Black, shape = RoundedCornerShape(16.dp))
+                .background(color = Color.White, shape = RoundedCornerShape(16.dp))
+                .padding(horizontal = 2.dp)
         )
         Text(
             text = from,
             fontSize = 36.sp,
             modifier = Modifier
-                .padding(16.dp)
+                .padding(end = 16.dp)
+                .border(2.dp, Color.DarkGray, shape = RoundedCornerShape(16.dp))
+                .background(color = Color.LightGray, shape = RoundedCornerShape(16.dp))
+                .padding(4.dp)
                 .align(alignment = Alignment.End)
         )
     }
